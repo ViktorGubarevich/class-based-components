@@ -2,7 +2,7 @@ import { Fragment, Component } from "react";
 import Customers from "./Customers";
 import styles from "./CustomerFilter.module.css";
 import CustomersContext from "../store/customers-context";
-// import ErrorBoundary from "./ErrorBoundary";
+import ErrorBoundary from "./ErrorBoundary";
 
 class CustomerFilter extends Component {
   static contextType = CustomersContext;
@@ -44,9 +44,9 @@ class CustomerFilter extends Component {
         <div className={styles.filter}>
           <input type="search" onChange={this.filterHandler.bind(this)} />
         </div>
-        {/* <ErrorBoundary> */}
+        <ErrorBoundary>
           <Customers customers={this.state.filteredCustomers} />
-        {/* </ErrorBoundary> */}
+        </ErrorBoundary>
       </Fragment>
     );
   }
